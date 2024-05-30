@@ -12,12 +12,19 @@ function App() {
     localStorage.setItem("markdownText", text);
   }, [text]);
 
-  const insertText = (before:number, after:number) => {
+  const insertText = (initialSimbol:string, finalSimbol:string) => {
       const textArea = textAreaRef.current;
       const start = textArea.selectionStart;
       const end = textArea.selectionEnd;
 
-      console.log(`${start} e ${end}`);
+      const originalText = textArea.value;
+      const beforeText = originalText.substring(0, start);
+      const selectedText = originalText.substring(start, end);
+      const afterText = originalText.substring(end);
+      const newText = `${beforeText}${initialSimbol}${selectedText}${finalSimbol}${afterText}`;
+      textArea.value = newText;
+      setText(newText);
+      textArea.focus();
   };
 
   return (
@@ -29,7 +36,8 @@ function App() {
         onChange={(e) => setText(e.target.value)}
       ></textarea>
       <div className="markdown_output">
-        {text && <ReactMarkdown>{text}</ReactMarkdown>}
+        {/* {textAreaRef.current && textAreaRef.current.value && <ReactMarkdown>{textAreaRef.current.value}</ReactMarkdown>} */}
+        <ReactMarkdown>{text}</ReactMarkdown>
       </div>
     </div>
   )
