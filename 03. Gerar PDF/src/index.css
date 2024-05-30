@@ -1,0 +1,66 @@
+body {
+  font-family: 'Courier New', Courier, monospace;
+}
+
+h1 {
+  text-align: center;
+}
+
+.container {
+  padding: 20px;
+  max-width: 500px;
+  margin: 0 auto;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+  background-color: white;
+}
+
+.label {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 20px;
+  font-size: 16px;
+}
+
+.input {
+  padding: 10px;
+  font-size: 16px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+.button {
+  padding: 10px 20px;
+  font-size: 16px;
+  background-color: blueviolet;
+  color: white;
+  border-radius: 4px;
+  cursor: pointer;
+  border: 1px solid blueviolet;
+  transition: 0.5s;
+}
+
+.button:hover {
+  background-color: white;
+  color: blueviolet;
+}
+
+.textStyleConfig {
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  margin-bottom: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.imageUpload {
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;  
+  margin-bottom: 20px;  
+}
+
+.colorPicker, .fileInput {
+  cursor: pointer;
+}
