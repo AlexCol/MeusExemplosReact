@@ -13,6 +13,8 @@ const Toolbar = ({insertText}: IToolbarProps) => {
       <button onClick={() => insertText('```\n', '\n```')}>Code Block</button>
       <button onClick={() => insertText('- ', '')}>List Item</button>
       <button onClick={() => insertText('\n---\n', '')}>Horizontal Line</button>
+      {/* apenas pra exemplo, se for ter marcadores, melhor colocar num 'drop down' */}
+      <button onClick={() => insertText('❌', '')}>❌</button>
     </div>
   )
 }
