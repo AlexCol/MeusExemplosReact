@@ -1,10 +1,10 @@
-import { ChangeEvent, MutableRefObject, useEffect, useRef } from "react";
-import MarkDownToolbar from "./MarkDownToolbar"
+import { ChangeEvent, MutableRefObject, useRef } from "react";
+import MarkDownToolbar from "./MarkDownToolbar";
 
 export const MarkDownEditComp = () => {
-  const textAreaRef = useRef<HTMLTextAreaElement>() as MutableRefObject<HTMLTextAreaElement>;    
+  const textAreaRef = useRef<HTMLTextAreaElement>() as MutableRefObject<HTMLTextAreaElement>;
 
-  const insertMarkings = (initialSimbol:string, finalSimbol:string) => {
+  const insertMarkings = (initialSimbol: string, finalSimbol: string) => {
     const textArea = textAreaRef.current;
     const start = textArea.selectionStart;
     const end = textArea.selectionEnd;
@@ -15,28 +15,26 @@ export const MarkDownEditComp = () => {
     const newText = `${beforeText}${initialSimbol}${selectedText}${finalSimbol}${afterText}`;
     textArea.value = newText;
     localStorage.setItem("markdownText", newText);
-  }
+  };
 
   const OnChange = (e: ChangeEvent<HTMLTextAreaElement>) => {
     e.preventDefault();
-    if (e.target.value.length > 0)
+    if (e.target.value.length > 0) {
       localStorage.setItem("markdownText", e.target.value);
-    else
+    } else {
       localStorage.removeItem("markdownText");
-  }
-
-  useEffect(() => {
-    textAreaRef.current.value = localStorage.getItem("markdownText") || "# Informe seu texto aqui.";
-  }, [])
+    }
+  };
 
   return (
     <div>
-      <MarkDownToolbar insertText={insertMarkings}/>
+      <MarkDownToolbar insertText={insertMarkings} />
       <textarea
         id="Editor"
         ref={textAreaRef}
         onChange={(e) => OnChange(e)}
+        defaultValue={localStorage.getItem("markdownText") || "# Informe seu texto aqui."}
       ></textarea>
     </div>
-  )
-}
+  );
+};
