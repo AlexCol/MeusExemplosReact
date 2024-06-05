@@ -3,7 +3,9 @@ ou
 npm init vite
 
 
-
+//icons
+npm i react-icons
+npm i --save-dev @types/react-icons
 
 
 /*
