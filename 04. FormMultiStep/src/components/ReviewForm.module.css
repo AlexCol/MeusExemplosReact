@@ -5,6 +5,11 @@
   margin-bottom: 2rem;
 }
 
+.form_control textarea {
+  resize: none;
+}
+
+
 .form_control.score_container {
   flex-direction: row;
   justify-content: center;
@@ -37,7 +42,6 @@
 }
 
 svg {
-  border: 1px solid red;
   border-radius: 25px;
 }
 
