@@ -1,0 +1,4 @@
+
+imagens lottie:
+	https://lottiefiles.com/
+	react-lottie
