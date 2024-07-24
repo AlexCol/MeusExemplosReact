@@ -2,3 +2,7 @@
 imagens lottie:
 	https://lottiefiles.com/
 	react-lottie
+
+
+storybook (mostra de forma visual os componentes criados)
+	https://storybook.js.org/tutorials/intro-to-storybook/react/pt/get-started/
