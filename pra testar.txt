@@ -1,7 +1,25 @@
 
 imagens lottie:
 	https://lottiefiles.com/
-	react-lottie
+npm install lottie-web
+baixar json do site lottie
+
+imports no arquivo que vai usar a imagem:
+import Lottie from 'lottie-web';
+import loadingLottie from './lottie/loadingAnimation.json'; //arqui é o nome que quiser, e o caminho onde está o json
+
+no useEffect, adiciona a configuração da imagem (um useEffect sem parâmetro, pra rodar uma vez só - substituir '.loading' pela classe da div)
+    Lottie.loadAnimation({
+      container: document.querySelector('.loading')!,
+      renderer: 'svg',
+      loop: true,
+      autoplay: true,
+      animationData: loadingLottie,
+    });
+
+cria a div 
+<div className='loading'></div>
+
 
 
 storybook (mostra de forma visual os componentes criados)
