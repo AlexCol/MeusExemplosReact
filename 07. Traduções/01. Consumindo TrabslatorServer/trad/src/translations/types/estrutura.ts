@@ -2,8 +2,8 @@
 // ⚠️ Arquivo gerado automaticamente
 // NÃO EDITE MANUALMENTE
 
-export type Langs = 'en' | 'es' | 'pt-BR';
-export const LangsList: Langs[] = ['en', 'es', 'pt-BR'];
+export type Langs = 'en' | 'pt-BR';
+export const LangsList: Langs[] = ['en', 'pt-BR'];
 
 export type Namespace = 'contratos' | 'faturamento' | 'financeiro' | 'usuarios';
 export const NamespacesList: Namespace[] = ['contratos', 'faturamento', 'financeiro', 'usuarios'];
