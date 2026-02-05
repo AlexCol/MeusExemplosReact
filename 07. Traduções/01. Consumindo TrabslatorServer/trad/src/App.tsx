@@ -4,7 +4,7 @@ import { dicionario, formatTranslation } from "./translations";
 import { useTradContext } from "./context/TradContext";
 
 function App() {
-  const { lang, setLang, dicionarioLoaded } = useTradContext();
+  const { lang, setLang, getLangName, dicionarioLoaded } = useTradContext();
 
   if (!dicionarioLoaded) {
     return <div>Carregando dicionário...</div>;
@@ -17,7 +17,7 @@ function App() {
           key={language}
           onClick={() => setLang(language)}
         >
-          {language}
+          {getLangName(language)}
         </button>
       ))}
 

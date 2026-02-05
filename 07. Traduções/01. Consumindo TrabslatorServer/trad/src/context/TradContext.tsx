@@ -1,5 +1,5 @@
 import { createContext, useContext, useEffect, useState } from "react";
-import type { Langs } from "../translations/types/estrutura";
+import { type Langs } from "../translations/types/estrutura";
 import { loadDicionario } from "../translations";
 
 //*************************************************************
@@ -8,6 +8,17 @@ import { loadDicionario } from "../translations";
 function useTradProvider() {
   const [lang, setLang] = useState<Langs>("en");
   const [dicionarioLoaded, setDicionarioLoaded] = useState(false);
+
+  function getLangName(lang: Langs) {
+    try {
+      const canonical = Intl.getCanonicalLocales(lang)[0];
+      const dn = new Intl.DisplayNames([canonical], { type: "language" });
+      const languageName = dn.of(canonical) ?? canonical;
+      return languageName.charAt(0).toUpperCase() + languageName.slice(1);
+    } catch {
+      return lang;
+    }
+  }
 
   useEffect(() => {
     const fetch = async () => {
@@ -18,7 +29,7 @@ function useTradProvider() {
     fetch();
   }, []);
 
-  return { lang, setLang, dicionarioLoaded };
+  return { lang, setLang, dicionarioLoaded, getLangName };
 }
 export type TradContextType = ReturnType<typeof useTradProvider>;
 
