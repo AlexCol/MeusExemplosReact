@@ -1,0 +1,13 @@
+https://ui.shadcn.com/docs/installation
+
+--escolher qual a forma de iniciar o react e seguir
+
+exemplos
+https://ui.shadcn.com/
+
+temas
+https://tweakcn.com/editor/theme
+
+adicionar componentes:
+npx shadcn@latest add {componente}
+ex: npx shadcn@latest add button
