@@ -5,8 +5,8 @@
 export type Langs = 'en' | 'en-US' | 'es' | 'es-AR' | 'pt-BR';
 export const LangsList: Langs[] = ['en', 'en-US', 'es', 'es-AR', 'pt-BR'];
 
-export type Namespace = 'Common' | 'Contabilidade' | 'Contratos' | 'Faturamento' | 'TI';
-export const NamespacesList: Namespace[] = ['Common', 'Contabilidade', 'Contratos', 'Faturamento', 'TI'];
+export type Namespace = 'Common' | 'Contabilidade' | 'Contratos' | 'Faturamento' | 'TI' | 'Usuarios';
+export const NamespacesList: Namespace[] = ['Common', 'Contabilidade', 'Contratos', 'Faturamento', 'TI', 'Usuarios'];
 
 export interface Translation {
   Common: typeof import('./../jsons/Common.json');
@@ -14,4 +14,5 @@ export interface Translation {
   Contratos: typeof import('./../jsons/Contratos.json');
   Faturamento: typeof import('./../jsons/Faturamento.json');
   TI: typeof import('./../jsons/TI.json');
+  Usuarios: typeof import('./../jsons/Usuarios.json');
 }
